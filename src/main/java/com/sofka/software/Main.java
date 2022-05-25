@@ -11,11 +11,12 @@ public class Main {
     Scanner scanner = new Scanner(System.in);
     Calculadora calculadora;
     int opcion = 1;
-    Double num1;
-    Double num2;
+    double num1;
+    double num2;
 
     final String requestData1 = "Por favor Ingreso el número 1";
     final String requestData2 = "Por favor Ingreso el número 2";
+    final String separator = "\n---------------------------------\n";
 
     try {
       while (opcion != 5) {
@@ -39,10 +40,10 @@ public class Main {
             calculadora = new Calculadora(num1, num2);
             logger.log(
                 Level.INFO,
-                "\n--------------------------\n"
+                "{1}"
                     + "     Resultado =  suma {0}    "
-                    + "\n--------------------------\n",
-                calculadora.sumar());
+                    + "\n{1}",
+                    new Object[] {calculadora.sumar(), separator});
             break;
           case 2:
             logger.info(requestData1);
@@ -53,10 +54,10 @@ public class Main {
             calculadora = new Calculadora(num1, num2);
             logger.log(
                 Level.INFO,
-                "\n--------------------------\n"
+                "{1}"
                     + "     Resultado =  Resta {0}    "
-                    + "\n--------------------------\n",
-                calculadora.restar());
+                    + "{1}",
+                new Object[] {calculadora.restar(), separator});
             break;
           case 3:
             logger.info(requestData1);
@@ -67,10 +68,10 @@ public class Main {
             calculadora = new Calculadora(num1, num2);
             logger.log(
                 Level.INFO,
-                "\n--------------------------\n"
+                "{1}"
                     + "     Resultado =  Multiplicación {0}    "
-                    + "\n--------------------------\n",
-                calculadora.multiplicar());
+                    + "{1}",
+                    new Object[] {calculadora.multiplicar(), separator});
             break;
           case 4:
             logger.info(requestData1);
@@ -81,16 +82,18 @@ public class Main {
             calculadora = new Calculadora(num1, num2);
             logger.log(
                 Level.INFO,
-                "\n--------------------------\n"
+                "{1}"
                     + "     Resultado =  División {0}    "
-                    + "\n--------------------------\n",
-                calculadora.dividir());
+                    + "{1}",
+                    new Object[] {calculadora.dividir(), separator});
+            break;
+          case 5:
             break;
           default:
-            logger.warning(
-                "\n--------------------------------\n"
+            logger.log(Level.WARNING,
+                "{0}"
                     + "  La opcion es incorrecta."
-                    + "\n--------------------------------");
+                    + "\n{0}", separator);
             break;
         }
       }
