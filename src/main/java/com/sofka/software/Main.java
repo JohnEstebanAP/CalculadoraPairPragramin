@@ -5,7 +5,24 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * [Método principal que contiene un menú referente a una calculadora de operaciones básicas]
+ *
+ * @version 1.0.0
+ * @author Miller Esteban Gallego Forero - miller.gallegof@gmail.com John Esteban Alvarez Piedrahita
+ *     - esteban.ea145@gmail.com
+ * @since Esta presente desde la version 1.0.0
+ */
 public class Main {
+
+  /**
+   * [Constructor principal donde se inicializa el programa.]
+   *
+   * @param args argumentos que recibe por defecto el método principal
+   * @author Miller Esteban Gallego Forero - miller.gallegof@gmail.com
+   *         John Esteban Alvarez Piedrahita - esteban.ea145@gmail.com
+   * @since [1.0.0]
+   */
   public static void main(String[] args) {
     Logger logger = Logger.getLogger(Main.class.getName());
     Scanner scanner = new Scanner(System.in);
