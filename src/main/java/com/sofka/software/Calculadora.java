@@ -9,6 +9,10 @@ public class Calculadora {
         this.dato2 = dato2;
     }
 
+    public Calculadora() {
+        this.dato1 = 0.0;
+        this.dato2 = 0.0;
+    }
     public Double sumar(){
         return this.dato1 + this.dato2;
     }
